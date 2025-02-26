@@ -104,6 +104,8 @@ public class SimpleMenuItem implements MenuItem, Serializable {
     /**
      * Return String representation.
      */
+    // Added @Override annotation as part of Java SE 8 to Java SE 21 upgrade
+    @Override
     public String toString() {
         StringBuilder buff = new StringBuilder("SimpleMenuItem[");
 

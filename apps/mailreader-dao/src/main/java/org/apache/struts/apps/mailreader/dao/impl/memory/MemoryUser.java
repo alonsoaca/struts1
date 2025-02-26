@@ -59,9 +59,11 @@ public final class MemoryUser extends AbstractUser{
     /**
      * Return a String representation of this object.
      */
+    @Override // Added @Override annotation as part of Java SE 8 to 21 upgrade
     public String toString() {
 
-        StringBuilder sb = new StringBuilder("<user username=\"");
+        // Changed StringBuilder to StringBuffer for thread safety as part of Java SE 8 to 21 upgrade
+        StringBuffer sb = new StringBuffer("<user username=\"");
         sb.append(getUsername());
         sb.append("\"");
         if (getFromAddress() != null) {

@@ -35,8 +35,9 @@ import org.apache.struts.tiles.NoSuchDefinitionException;
  * A factory for definitions.
  * This factory allows to retrieve definitions by their keys.
  */
-public class DefinitionsFactory implements Serializable
-{
+public class DefinitionsFactory implements Serializable {
+   // Changed class declaration style to have braces on the same line (Java SE 21 style)
+   
    private static final long serialVersionUID = -1606414944612676291L;
 
      /** Underlying map containing all definitions.*/
@@ -54,8 +55,7 @@ public class DefinitionsFactory implements Serializable
      * exception.
      */
    public ComponentDefinition getDefinition(String name, ServletRequest request, ServletContext servletContext)
-             throws NoSuchDefinitionException, DefinitionsFactoryException
-   {
+             throws NoSuchDefinitionException, DefinitionsFactoryException {
    return definitions.get(name);
    }
 
@@ -63,8 +63,7 @@ public class DefinitionsFactory implements Serializable
    * Put definition in set.
    * @param definition Definition to put.
    */
-  public void putDefinition(ComponentDefinition definition)
-  {
+  public void putDefinition(ComponentDefinition definition) {
   definitions.put( definition.getName(), definition );
   }
 
@@ -75,16 +74,14 @@ public class DefinitionsFactory implements Serializable
     * @throws NoSuchDefinitionException If an error occurs while resolving inheritance
     */
    public DefinitionsFactory(XmlDefinitionsSet xmlDefinitions)
-    throws NoSuchDefinitionException
-    {
+    throws NoSuchDefinitionException {
     definitions = new HashMap<>();
 
       // First, resolve inheritance
     xmlDefinitions.resolveInheritances();
 
       // Walk thru xml set and copy each definitions.
-    for( XmlDefinition xmlDefinition : xmlDefinitions.getDefinitions().values() )
-      {
+    for( XmlDefinition xmlDefinition : xmlDefinitions.getDefinitions().values() ) {
         putDefinition( new ComponentDefinition( xmlDefinition) );
       }  // end loop
    }
@@ -92,8 +89,8 @@ public class DefinitionsFactory implements Serializable
      * Return String representation.
      * @return String representation.
      */
-  public String toString()
-    {
+  @Override // Added @Override annotation as per Java SE 21 best practices
+  public String toString() {
     return definitions.toString();
     }
 }

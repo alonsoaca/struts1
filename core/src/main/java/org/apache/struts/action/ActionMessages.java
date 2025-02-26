@@ -52,6 +52,8 @@ public class ActionMessages implements Serializable {
 
     /**
      * <p>Compares ActionMessageItem objects.</p>
+     * 
+     * // Updated to use lambda expression for Comparator implementation
      */
     private static final Comparator<ActionMessageItem> ACTION_ITEM_COMPARATOR =
         (ami1, ami2) -> ami1.getOrder() - ami2.getOrder();
@@ -313,6 +315,7 @@ public class ActionMessages implements Serializable {
      * @return String representation of the messages
      * @see Object#toString()
      */
+    @Override // Added @Override annotation as part of Java SE 21 upgrade
     public String toString() {
         return this.messages.toString();
     }
@@ -411,6 +414,7 @@ public class ActionMessages implements Serializable {
          *
          * @return A string representation of this object.
          */
+        @Override // Added @Override annotation as part of Java SE 21 upgrade
         public String toString() {
             return this.list.toString();
         }

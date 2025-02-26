@@ -39,8 +39,7 @@ import org.apache.struts.tiles.NoSuchDefinitionException;
  * factory and then calls its getDefinition().
  */
 @SuppressWarnings("deprecation")
-public abstract class FactorySet implements org.apache.struts.tiles.ComponentDefinitionsFactory
-{
+public abstract class FactorySet implements org.apache.struts.tiles.ComponentDefinitionsFactory {
     private static final long serialVersionUID = -3005016733922480701L;
 
     /** Loaded factories */
@@ -140,8 +139,7 @@ public abstract class FactorySet implements org.apache.struts.tiles.ComponentDef
   /**
    * Constructor.
    */
-  public FactorySet()
-  {
+  public FactorySet() {
   factories = new HashMap<>();
   }
 
@@ -149,13 +147,12 @@ public abstract class FactorySet implements org.apache.struts.tiles.ComponentDef
      * Return String representation.
      * @return String representation.
      */
-  public String toString()
-    {
+  @Override // Added @Override annotation as per Java SE 21 best practices
+  public String toString() {
     StringBuilder buff = new StringBuilder( "all FactorySet's factory : \n" );
-    for (Object factory : factories.values())
-      {
+    for (Object factory : factories.values()) {
       buff.append( factory.toString() ).append("\n");
-      }
-    return buff.toString();
     }
+    return buff.toString();
+  }
 }

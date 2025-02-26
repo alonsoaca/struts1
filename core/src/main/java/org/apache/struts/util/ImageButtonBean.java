@@ -97,6 +97,8 @@ public class ImageButtonBean implements Serializable {
     /**
      * Return a string representation of this object.
      */
+    // Added @Override annotation to comply with Java SE 21 best practices
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("ImageButtonBean[");
 

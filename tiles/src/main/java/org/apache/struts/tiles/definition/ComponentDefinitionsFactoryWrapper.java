@@ -166,7 +166,8 @@ public class ComponentDefinitionsFactoryWrapper implements DefinitionsFactory {
 
         try {
             Class<?> factoryClass = RequestUtils.applicationClass(classname);
-            Object factory = factoryClass.newInstance();
+            // Updated to use modern instance creation pattern
+            Object factory = factoryClass.getDeclaredConstructor().newInstance();
             return (org.apache.struts.tiles.ComponentDefinitionsFactory) factory;
 
         } catch (ClassCastException ex) { // Bad classname
@@ -188,8 +189,9 @@ public class ComponentDefinitionsFactoryWrapper implements DefinitionsFactory {
 
         } catch (IllegalAccessException ex) {
             throw new DefinitionsFactoryException(ex);
+        } catch (ReflectiveOperationException ex) { // Added to catch other reflection exceptions
+            throw new DefinitionsFactoryException(ex);
         }
-
     }
 
     /**
@@ -197,6 +199,7 @@ public class ComponentDefinitionsFactoryWrapper implements DefinitionsFactory {
      * Calls toString() on underlying factory.
      * @return String representation.
      */
+    @Override // Added @Override annotation as per upgrade instructions
     public String toString() {
         return getInternalFactory().toString();
     }
@@ -228,5 +231,4 @@ public class ComponentDefinitionsFactoryWrapper implements DefinitionsFactory {
 
         return map;
     }
-
 }

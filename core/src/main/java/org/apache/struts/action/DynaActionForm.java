@@ -159,7 +159,8 @@ public class DynaActionForm extends ActionForm implements DynaBean {
                 continue;
             }
 
-            boolean reset = Boolean.valueOf(resetValue).booleanValue();
+            // Java SE 21 update: Using Boolean.parseBoolean instead of Boolean.valueOf().booleanValue()
+            boolean reset = Boolean.parseBoolean(resetValue);
 
             if (!reset) {
                 // check for the request method
@@ -529,6 +530,7 @@ public class DynaActionForm extends ActionForm implements DynaBean {
      *
      * @return A string representation of this object.
      */
+    @Override // Java SE 21 update: Added @Override annotation
     public String toString() {
         StringBuilder sb = new StringBuilder("DynaActionForm[dynaClass=");
         DynaClass dynaClass = getDynaClass();

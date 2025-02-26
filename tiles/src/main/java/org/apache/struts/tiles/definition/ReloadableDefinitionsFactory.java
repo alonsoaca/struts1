@@ -256,6 +256,7 @@ public class ReloadableDefinitionsFactory implements org.apache.struts.tiles.Com
      * Return String representation.
      * @return String representation.
      */
+    @Override // Added @Override annotation as part of Java SE 21 upgrade
     public String toString() {
         return factory.toString();
     }

@@ -31,16 +31,21 @@ import java.util.Iterator;
  *          $
  */
 public class MockEnumeration<E> implements Enumeration<E> {
+    // The iterator is now properly typed with the generic type parameter E
     protected Iterator<E> iterator;
 
     public MockEnumeration(Iterator<E> iterator) {
         this.iterator = iterator;
     }
 
+    // Added @Override annotation as per Java SE 21 best practices
+    @Override
     public boolean hasMoreElements() {
         return (iterator.hasNext());
     }
 
+    // Added @Override annotation as per Java SE 21 best practices
+    @Override
     public E nextElement() {
         return (iterator.next());
     }

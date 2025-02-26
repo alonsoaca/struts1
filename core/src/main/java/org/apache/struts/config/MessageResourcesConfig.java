@@ -139,6 +139,7 @@ public class MessageResourcesConfig extends BaseConfig {
     /**
      * Return a String representation of this object.
      */
+    @Override // Added @Override annotation as part of Java SE 8 to 21 upgrade
     public String toString() {
         StringBuilder sb = new StringBuilder("MessageResourcesConfig[");
 

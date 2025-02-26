@@ -31,4 +31,5 @@ package org.apache.struts.taglib.nested;
  * @since Struts 1.1
  */
 public interface NestedTagSupport {
+    // No changes needed as this is a marker interface without method implementations
 }

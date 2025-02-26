@@ -54,7 +54,11 @@ public class Coord implements java.io.Serializable {
         this.y = y;
     }
 
+    // Added @Override annotation as per Java SE 21 best practices
+    @Override
     public String toString() {
+        // Note: The original code was already using string concatenation, not StringBuilder
+        // No change needed for StringBuffer as the original code doesn't use either
         return ("Coord[" + "x=" + x + ";y=" + y + "]");
     }
 }
