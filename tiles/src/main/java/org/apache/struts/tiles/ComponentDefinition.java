@@ -42,8 +42,8 @@ public class ComponentDefinition implements Serializable {
     /**
      * The {@code Log} instance for this class.
      */
-    private final static Logger LOG =
-            LoggerFactory.getLogger(ComponentDefinition.class);
+    // Updated to use modern SLF4J pattern with static final field
+    private static final Logger LOG = LoggerFactory.getLogger(ComponentDefinition.class);
 
     /**
      * Definition name
@@ -345,6 +345,8 @@ public class ComponentDefinition implements Serializable {
     /**
      * Returns a description of the attributes.
      */
+    // Added @Override annotation as required by Java SE 21 best practices
+    @Override
     public String toString() {
         return "{name="
             + name

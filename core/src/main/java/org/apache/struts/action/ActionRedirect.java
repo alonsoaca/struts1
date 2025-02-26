@@ -332,6 +332,7 @@ public class ActionRedirect extends ActionForward {
      * @return a string containing the original path for this object and the
      *         parameters it currently holds
      */
+    @Override // Added @Override annotation as part of Java SE 8 to Java SE 21 upgrade
     public String toString() {
         StringBuilder result = new StringBuilder(DEFAULT_BUFFER_SIZE);
 

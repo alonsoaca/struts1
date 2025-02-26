@@ -42,6 +42,8 @@ public class LabelValueBean implements Comparable<LabelValueBean>, Serializable 
     /**
      * Comparator that can be used for a case insensitive sort of
      * <code>LabelValueBean</code> objects.
+     * 
+     * // Updated to use lambda expression syntax for Java 8+
      */
     public static final Comparator<LabelValueBean> CASE_INSENSITIVE_ORDER =
         (lvb1, lvb2) -> lvb1.getLabel().compareToIgnoreCase(lvb2.getLabel());
@@ -102,6 +104,7 @@ public class LabelValueBean implements Comparable<LabelValueBean>, Serializable 
      *
      * @see Comparable
      */
+    @Override
     public int compareTo(LabelValueBean o) {
         // Implicitly tests for the correct type, throwing
         // ClassCastException as required by interface
@@ -113,6 +116,7 @@ public class LabelValueBean implements Comparable<LabelValueBean>, Serializable 
     /**
      * Return a string representation of this object.
      */
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("LabelValueBean[");
 
@@ -129,6 +133,7 @@ public class LabelValueBean implements Comparable<LabelValueBean>, Serializable 
      *
      * @see Object#equals(Object)
      */
+    @Override
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -157,6 +162,7 @@ public class LabelValueBean implements Comparable<LabelValueBean>, Serializable 
      *
      * @see Object#hashCode()
      */
+    @Override
     public int hashCode() {
         return (this.getValue() == null) ? 17 : this.getValue().hashCode();
     }

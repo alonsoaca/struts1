@@ -179,6 +179,8 @@ public class ActionMessage implements Serializable {
      * @return String representation of this message
      * @see java.lang.Object#toString()
      */
+    // Added @Override annotation as part of Java SE 8 to Java SE 21 upgrade
+    @Override
     public String toString() {
         StringBuilder buff = new StringBuilder();
 

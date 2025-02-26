@@ -284,6 +284,8 @@ public final class SubscriptionForm extends ActionForm  {
     /**
      * <p>Return a string representation of this form bean.</p>
      */
+    // Added @Override annotation as part of Java SE 8 to Java SE 21 upgrade
+    @Override
     public String toString() {
 
         StringBuilder sb = new StringBuilder(super.toString());
@@ -305,4 +307,3 @@ public final class SubscriptionForm extends ActionForm  {
 
 
 }
-

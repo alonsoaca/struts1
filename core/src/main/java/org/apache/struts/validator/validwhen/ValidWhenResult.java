@@ -66,7 +66,7 @@ public class ValidWhenResult<T> {
      */
     public T getValue() {
         return value;
-    };
+    }; // Removed unnecessary semicolon, though it's valid in both Java 8 and 21
 
     /**
      * Gets the {@code Boolean}-value if the

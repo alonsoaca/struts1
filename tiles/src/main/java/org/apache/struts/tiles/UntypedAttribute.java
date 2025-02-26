@@ -84,7 +84,11 @@ public class UntypedAttribute implements AttributeDefinition {
 
     /**
      * Get String representation of this object.
+     * 
+     * // Added @Override annotation as part of Java SE 8 to 21 upgrade
+     * // This explicitly indicates that this method is overriding a method from a superclass or interface
      */
+    @Override
     public String toString() {
         return value.toString();
     }

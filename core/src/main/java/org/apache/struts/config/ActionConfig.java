@@ -1403,6 +1403,7 @@ public class ActionConfig extends BaseConfig {
     /**
      * <p> Return a String representation of this object. </p>
      */
+    @Override // Added @Override annotation for Java 21 compliance
     public String toString() {
         StringBuilder sb = new StringBuilder("ActionConfig[");
 

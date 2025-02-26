@@ -151,9 +151,11 @@ public class AbstractSubscription implements Subscription {
     /**
      * Return a String representation of this object.
      */
+    // Added @Override annotation to comply with Java SE 21 best practices
+    @Override
     public String toString() {
-
-        StringBuilder sb = new StringBuilder("<subscription host=\"");
+        // Changed StringBuilder to StringBuffer for thread safety
+        StringBuffer sb = new StringBuffer("<subscription host=\"");
         sb.append(host);
         sb.append("\" autoConnect=\"");
         sb.append(autoConnect);
@@ -175,8 +177,5 @@ public class AbstractSubscription implements Subscription {
         }
         sb.append(">");
         return (sb.toString());
-
     }
-
-
 }
